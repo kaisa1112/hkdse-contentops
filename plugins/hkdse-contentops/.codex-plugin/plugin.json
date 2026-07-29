@@ -1,7 +1,7 @@
 {
   "name": "hkdse-contentops",
-  "version": "0.1.0",
-  "description": "Generate platform-ready content packs for Hong Kong DSE education accounts.",
+  "version": "0.2.0",
+  "description": "Generate four-format content drafts for Hong Kong DSE education accounts.",
   "author": {
     "name": "z2429875275-cell",
     "url": "https://github.com/z2429875275-cell"
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "HKDSE ContentOps",
-    "shortDescription": "Generate four-platform Hong Kong DSE content packs.",
-    "longDescription": "Create coherent Xiaohongshu, Instagram, Reels, and livestream content for Hong Kong DSE education accounts without inventing brands or making guaranteed-result claims.",
+    "shortDescription": "Generate four-format Hong Kong DSE content drafts.",
+    "longDescription": "Create coordinated Xiaohongshu posts, Instagram captions, short-form video scripts, and livestream scripts with audience-aware language, official-source checks for time-sensitive claims, and compliance safeguards.",
     "developerName": "z2429875275-cell",
     "category": "Productivity",
     "capabilities": [
