@@ -1,13 +1,13 @@
 {
   "name": "hkdse-contentops",
-  "version": "0.2.0",
-  "description": "Generate four-format content drafts for Hong Kong DSE education accounts.",
+  "version": "0.4.0+codex.20260730125946",
+  "description": "Operate Hong Kong DSE Instagram and Xiaohongshu acquisition with platform-native content.",
   "author": {
-    "name": "z2429875275-cell",
-    "url": "https://github.com/z2429875275-cell"
+    "name": "kaisa1112",
+    "url": "https://github.com/kaisa1112"
   },
-  "homepage": "https://github.com/z2429875275-cell/hkdse-contentops#readme",
-  "repository": "https://github.com/z2429875275-cell/hkdse-contentops",
+  "homepage": "https://github.com/kaisa1112/hkdse-contentops#readme",
+  "repository": "https://github.com/kaisa1112/hkdse-contentops",
   "license": "MIT",
   "keywords": [
     "codex",
@@ -18,19 +18,22 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "HKDSE ContentOps",
-    "shortDescription": "Generate four-format Hong Kong DSE content drafts.",
-    "longDescription": "Create coordinated Xiaohongshu posts, Instagram captions, short-form video scripts, and livestream scripts with audience-aware language, official-source checks for time-sensitive claims, and compliance safeguards.",
-    "developerName": "z2429875275-cell",
+    "displayName": "\u9999\u6e2f\u4e2d\u5b66\u6587\u51ed\u8003\u8bd5\u5185\u5bb9\u8fd0\u8425",
+    "shortDescription": "Create native HKDSE Instagram and Xiaohongshu acquisition content.",
+    "longDescription": "Research current HKDSE news, policy, local platform demand, and parent or student concerns; then create Traditional-Cantonese Instagram carousels, Reels and Stories plus Mandarin Xiaohongshu posts, videos, livestreams, calendars, funnels, and account experiments.",
+    "developerName": "kaisa1112",
     "category": "Productivity",
     "capabilities": [
       "Write"
     ],
-    "websiteURL": "https://github.com/z2429875275-cell/hkdse-contentops",
+    "websiteURL": "https://github.com/kaisa1112/hkdse-contentops",
+    "brandColor": "#4F6FF0",
+    "composerIcon": "./assets/dse-icon.png",
+    "logo": "./assets/dse-icon.png",
     "defaultPrompt": [
-      "Generate today's Hong Kong DSE social-media content pack.",
-      "Create a DSE content pack for a topic I provide.",
-      "Draft Xiaohongshu, Instagram, Reels, and livestream DSE content."
+      "Research and generate today's Hong Kong DSE Instagram and Xiaohongshu content pack.",
+      "Create a Traditional-Cantonese Instagram carousel, Reel, Stories, caption, and tags.",
+      "Plan or diagnose an HKDSE Instagram or Xiaohongshu acquisition account."
     ]
   }
 }

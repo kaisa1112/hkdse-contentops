@@ -9,11 +9,129 @@ permissions:
 
 jobs:
   repository:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - name: Validate plugin, skill, and golden cases
-        run: python3 tests/validate_repository.py
+        run: python tests/validate_repository.py
+      - name: Test macOS/Linux installer
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          install_root=$(mktemp -d)
+          ./scripts/install-skill.sh --target both \
+            --codex-root "$install_root/codex" \
+            --claude-root "$install_root/claude"
+          test -f "$install_root/codex/hkdse-contentops/SKILL.md"
+          test -f "$install_root/claude/hkdse-contentops/SKILL.md"
+          if ./scripts/install-skill.sh --target both \
+            --codex-root "$install_root/codex" \
+            --claude-root "$install_root/claude"; then
+            echo "Non-force reinstall unexpectedly succeeded" >&2
+            exit 1
+          fi
+          ./scripts/install-skill.sh --target both --force \
+            --codex-root "$install_root/codex" \
+            --claude-root "$install_root/claude"
+          ./scripts/install-skill.sh --target both --force \
+            --codex-root "$install_root/codex" \
+            --claude-root "$install_root/claude"
+          test "$(find "$install_root/codex" -maxdepth 1 -type d -name 'hkdse-contentops.backup-*' | wc -l | tr -d ' ')" -eq 2
+          if ./scripts/install-skill.sh --target both \
+            --codex-root "$install_root/shared" \
+            --claude-root "$install_root/shared"; then
+            echo "Identical roots unexpectedly succeeded" >&2
+            exit 1
+          fi
+          mkdir -p "$install_root/shared-alias"
+          if ./scripts/install-skill.sh --target both \
+            --codex-root "$install_root/shared-alias" \
+            --claude-root "$install_root/shared-alias/."; then
+            echo "Equivalent roots unexpectedly succeeded" >&2
+            exit 1
+          fi
+          if ./scripts/install-skill.sh --target codex \
+            --codex-root '/.'; then
+            echo "Filesystem-root alias unexpectedly succeeded" >&2
+            exit 1
+          fi
+          if ./scripts/install-skill.sh --target both --force \
+            --codex-root "$install_root/overlap" \
+            --claude-root "$install_root/overlap/hkdse-contentops"; then
+            echo "Overlapping roots unexpectedly succeeded" >&2
+            exit 1
+          fi
+          if ./scripts/install-skill.sh --target codex --force \
+            --codex-root "$GITHUB_WORKSPACE/plugins/hkdse-contentops/skills"; then
+            echo "Source overwrite unexpectedly succeeded" >&2
+            exit 1
+          fi
+      - name: Test Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $installRoot = Join-Path $env:RUNNER_TEMP "hkdse-contentops-install"
+          .\scripts\install-skill.ps1 -Target both `
+            -CodexRoot (Join-Path $installRoot "codex") `
+            -ClaudeRoot (Join-Path $installRoot "claude")
+          if (-not (Test-Path (Join-Path $installRoot "codex\hkdse-contentops\SKILL.md"))) { throw "Codex install failed" }
+          if (-not (Test-Path (Join-Path $installRoot "claude\hkdse-contentops\SKILL.md"))) { throw "Claude install failed" }
+          $NonForceSucceeded = $true
+          try {
+            .\scripts\install-skill.ps1 -Target both `
+              -CodexRoot (Join-Path $installRoot "codex") `
+              -ClaudeRoot (Join-Path $installRoot "claude")
+          } catch {
+            $NonForceSucceeded = $false
+          }
+          if ($NonForceSucceeded) { throw "Non-force reinstall unexpectedly succeeded" }
+          1..2 | ForEach-Object {
+            .\scripts\install-skill.ps1 -Target both -Force `
+              -CodexRoot (Join-Path $installRoot "codex") `
+              -ClaudeRoot (Join-Path $installRoot "claude")
+          }
+          $CodexBackups = @(Get-ChildItem (Join-Path $installRoot "codex") -Directory -Filter "hkdse-contentops.backup-*")
+          if ($CodexBackups.Count -ne 2) { throw "Expected two distinct Codex backups" }
+          $SameRootSucceeded = $true
+          try {
+            .\scripts\install-skill.ps1 -Target both `
+              -CodexRoot (Join-Path $installRoot "shared") `
+              -ClaudeRoot (Join-Path $installRoot "shared")
+          } catch {
+            $SameRootSucceeded = $false
+          }
+          if ($SameRootSucceeded) { throw "Identical roots unexpectedly succeeded" }
+          $SharedAliasRoot = Join-Path $installRoot "shared-alias"
+          New-Item -ItemType Directory -Path $SharedAliasRoot -Force | Out-Null
+          $EquivalentRootSucceeded = $true
+          try {
+            .\scripts\install-skill.ps1 -Target both `
+              -CodexRoot $SharedAliasRoot `
+              -ClaudeRoot (Join-Path $SharedAliasRoot ".")
+          } catch {
+            $EquivalentRootSucceeded = $false
+          }
+          if ($EquivalentRootSucceeded) { throw "Equivalent roots unexpectedly succeeded" }
+          $OverlappingRootSucceeded = $true
+          try {
+            .\scripts\install-skill.ps1 -Target both -Force `
+              -CodexRoot (Join-Path $installRoot "overlap") `
+              -ClaudeRoot (Join-Path $installRoot "overlap\hkdse-contentops")
+          } catch {
+            $OverlappingRootSucceeded = $false
+          }
+          if ($OverlappingRootSucceeded) { throw "Overlapping roots unexpectedly succeeded" }
+          $SourceOverwriteSucceeded = $true
+          try {
+            .\scripts\install-skill.ps1 -Target codex -Force `
+              -CodexRoot (Join-Path $PWD "plugins\hkdse-contentops\skills")
+          } catch {
+            $SourceOverwriteSucceeded = $false
+          }
+          if ($SourceOverwriteSucceeded) { throw "Source overwrite unexpectedly succeeded" }

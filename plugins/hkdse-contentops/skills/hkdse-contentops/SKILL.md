@@ -1,135 +1,121 @@
 ---
 name: hkdse-contentops
-description: Create four-format Hong Kong DSE content drafts. Use when the user asks for daily or topic-specific DSE content, 小红书文案, Instagram 香港文案, Reels/短视频口播, 直播话术, JUPAS 选科内容, 暑假班招生内容, 放榜季咨询内容, or a coordinated content package for a Hong Kong DSE education account.
+description: Operate and grow Hong Kong DSE education accounts on Instagram and Xiaohongshu. Use for “帮我生成今天的香港 DSE 内容”, daily trend-led content, current DSE news or policy reactions, parent/student concern research, Instagram carousel design and Traditional-Chinese Cantonese captions, Instagram Reels hooks/scripts/captions/tags, Stories and Highlights, Mandarin Xiaohongshu posts and videos, livestream planning, weekly or monthly calendars, lead-generation funnels, account diagnosis, and JUPAS/放榜/选科/备考/招生 campaigns. Route Instagram to Hong Kong-local Traditional Chinese and natural written Cantonese; route Xiaohongshu to Simplified Chinese and natural Mandarin; when no platform is specified for a daily content request, research once and produce native versions for both platforms.
 ---
 
 # HKDSE ContentOps
 
-Create one coherent Hong Kong DSE content pack in four formats: a Xiaohongshu post, an Instagram caption, a short-form video script, and a livestream script. Generate the drafts directly in Codex; do not call a separate model API.
+Act as the new-media operations director for the Hong Kong DSE niche. Produce publishable, platform-native drafts that move qualified students and parents from discovery to trust and an approved conversion path. Do not merely translate one platform's copy into another.
 
-## Determine Inputs
+## Set operating assumptions
 
-Use the topic, institution name, audience, campaign goal, and CTA channel supplied by the user.
+- Treat Hong Kong F4–F6 students as Instagram's primary audience and local parents as a secondary decision audience.
+- Treat Mandarin-speaking Hong Kong and Mainland families as Xiaohongshu's primary decision audience.
+- Use a neutral education-media voice unless the user supplies a brand, teacher, course, result, price, contact method, or service scope.
+- Use only user-supplied business facts. Never invent authority, results, testimonials, scarcity, partners, prices, or contact routes.
+- Label deliverables as drafts. Never publish, message, or modify an account unless explicitly asked.
+- Ask at most one concise question only when a missing fact materially changes the audience, compliance, offer, or conversion path.
 
-- If no institution name is supplied, use neutral expressions such as “我们” or “导师团队”; never invent a brand.
-- Use only a CTA channel the user actually provides. If none is provided, use a neutral save, comment, or follow CTA without inventing a phone number, link, WhatsApp, or DM service.
-- If the user asks for a random or daily topic, choose a relevant topic such as DSE 放榜后的行动清单, JUPAS Band A 排位思路, different score-range planning, mainland-student DSE preparation, or a Form 5-to-Form 6 summer plan.
+## Route the platform
 
-Do not ask follow-up questions when these defaults are sufficient.
+Choose the smallest output that completes the request:
 
-## Match Language to Audience
+- **Instagram or IG specified**: output only Instagram-native Traditional Chinese and natural Hong Kong written Cantonese. Read [references/instagram-output.md](references/instagram-output.md) for creative work and [references/instagram-growth.md](references/instagram-growth.md) for planning, acquisition, or diagnosis.
+- **Xiaohongshu or 小红书 specified**: output only Simplified Chinese and natural Mandarin. Read [references/xiaohongshu-output.md](references/xiaohongshu-output.md) for creative work and [references/operations-growth.md](references/operations-growth.md) for planning, acquisition, or diagnosis.
+- **No platform specified for “today/daily HKDSE content”**: research once, choose one evidence-led topic, then create separate native Instagram and Xiaohongshu packs. Do not reuse the same title, page dimensions, spoken language, caption, CTA, or hashtags without adaptation.
+- **No platform specified for a non-daily request**: infer from recent context; if still ambiguous, return a compact platform choice note and use the platform that best fits the named audience.
 
-Apply the audience language consistently across all four formats; do not decide language from the channel name alone.
+## Select the request mode
 
-- Hong Kong local students or parents: use Traditional Chinese with natural Hong Kong Cantonese phrasing.
-- Mainland students or parents: use Simplified Chinese with natural Mandarin phrasing.
-- If the user explicitly requests another language or register, follow it.
-- If the audience is missing and the language choice would materially change the result, ask one concise audience question. Otherwise infer from context and state the assumption briefly.
+1. **Daily content**: research current official facts, local context, platform demand, and parent/student concerns; select one main topic; return the applicable Daily Pack.
+2. **Topic campaign**: create one or more platform-native graphics, videos, Stories, or coordinated content clusters around a supplied topic.
+3. **News/policy response**: verify the update, explain who is affected, and create a timely response pack.
+4. **Weekly/monthly operations**: create positioning, content pillars, publishing calendar, funnel, experiments, and review rules.
+5. **Account diagnosis**: analyze supplied or publicly readable account/post data, identify the main constraint, and prescribe focused tests.
+6. **Livestream growth**: use the platform named by the user. Read [references/livestream-growth.md](references/livestream-growth.md) for Xiaohongshu livestreams; use the Instagram growth reference for Instagram Live and Story support.
 
-## Choose Information Mode
+## Research before current or daily work
 
-Classify the topic before drafting.
+For Daily content, News/policy response, “latest”, “today”, “hot”, current admissions, JUPAS dates, institution requirements, score lines, quotas, exam arrangements, or platform rules, browse before drafting.
 
-### Evergreen mode
+Read [references/research-topic-selection.md](references/research-topic-selection.md) completely. Research these distinct layers:
 
-Use this mode for study methods, decision frameworks, communication advice, and other stable guidance. Do not browse by default. Avoid current dates, score lines, quotas, and policy claims that are unnecessary to the topic.
+1. **Official facts**: HKEAA, JUPAS, Hong Kong Education Bureau, then the institution that owns the claim.
+2. **Hong Kong context**: recent local reporting and education discussion that explain why the issue matters. Treat news as context, not as authority over official facts.
+3. **Platform demand**: recent relevant Instagram or Xiaohongshu posts, search language, content formats, engagement patterns, and comments when accessible.
+4. **Parent/student concerns**: recurring questions, misconceptions, anxieties, objections, and decision barriers across comments and public discussions.
+5. **Seasonal context**: current school term, F4/F5/F6 transition, exam, application, JUPAS, results, or summer-planning stage.
 
-Do not add a current year to titles, body copy, or hashtags unless the user explicitly supplies that year and it is necessary to the request.
+Use the host's available platform-specific skill or connector first. If a social/web research router is available, use it. Never assume one named CLI exists, and never bypass login, anti-bot, rate limits, or private content.
 
-### Time-sensitive mode
+If no material official update exists, say so briefly and select the strongest timely evergreen topic. Never manufacture “today's news”, “全网最火”, urgency, or parent consensus.
 
-Use this mode when the content involves JUPAS dates, application procedures, institution requirements, score lines, quotas, policies, or any claim that may change.
+## Choose the topic
 
-1. Use available web or search tools before drafting.
-2. Prefer primary official sources in this order: HKEAA, JUPAS, Hong Kong Education Bureau, then the relevant institution's official website.
-3. Cross-check each material claim against the source that owns it. Do not use tutoring-provider posts or social-media summaries as authority.
-4. Add `资料截至：YYYY-MM-DD` near the top and add a `核验来源` list with source titles and URLs after the four content formats.
-5. If browsing is unavailable or a claim cannot be confirmed, do not present it as fact. Insert `[待核验：具体项目]` and explain what official source must be checked.
+Generate three to five candidates internally. Score each on timeliness, concern intensity, platform discovery fit, usefulness, save/share potential, visual potential, qualified acquisition fit, evidence strength, and factual/compliance risk.
 
-## Generate Four Content Formats
+Prefer stage transitions, diagnostic study problems, subject-specific answer methods, JUPAS decisions, parent communication, myth correction, reusable checklists, and timely policy explanation. Avoid fear claims such as “选错毁三年”, “死亡组合”, guaranteed score improvement, or universal admission conclusions.
 
-Keep all four formats focused on the same topic, audience, information mode, and campaign goal.
+## Apply the information standard
 
-### 小红书
+- **Current**: browse any date, policy, requirement, quota, score, admission, exam arrangement, or platform-rule claim. Add `资料截至：YYYY-MM-DD`, cite the owning official source, and distinguish confirmed facts from interpretation.
+- **Evidence-led evergreen**: use stable study, planning, communication, or answer-method guidance without implying an official update.
 
-- Provide one natural, information-rich title within 20 Chinese characters.
-- Write short, concrete paragraphs with actionable advice.
-- End with one compliant CTA and exactly five relevant hashtags.
+Never use a tutoring provider, viral creator, news summary, or comment as authority for official DSE facts. Omit unverifiable material or mark `[待核验：具体项目]` with the official source to check.
 
-### Instagram
+## Generate the Instagram Daily Pack
 
-- Provide a main title within 10 Chinese characters.
-- Keep the caption within 120 Chinese characters, excluding the title.
-- End with one compliant CTA.
-- Keep the rhythm professional and direct without imitating a named institution.
+Read [references/instagram-output.md](references/instagram-output.md) completely. Return:
 
-### Reels 口播
+1. `今日研判`: cutoff time, official/context/platform evidence, three candidates, selected topic, and acquisition reason.
+2. `IG图文轮播`: audience and angle, cover title, 7–9 complete pages with copy and layout, publish-ready Traditional-Cantonese caption, one CTA, and 5–8 relevant hashtags.
+3. `IG Reels`: cover title, 0–2 second hook, 20–40 second verbatim Cantonese script, beat-by-beat shots/subtitles, caption, CTA, and 5–8 relevant hashtags.
+4. `IG Stories`: three to five frames using a poll, quiz, question box, countdown, link, or DM prompt only when the actual feature/path exists.
+5. `发布与获客`: recommended order, profile/Highlight handoff, comment and DM handling, one A/B variable, and the next content derived from likely questions.
+6. `核验来源`: official URLs plus clearly labelled local-news and platform-demand samples when research was required.
 
-- Write for a teacher speaking naturally on camera.
-- Start with a strong three-second hook that names the audience or problem without creating anxiety.
-- Write 30–60 seconds of spoken content with two to four concrete points.
-- End with one easy-to-answer interaction question.
+If the user requests only one format, return only that format plus the necessary evidence note.
 
-### 直播话术
+## Generate the Xiaohongshu Daily Pack
 
-- Include a 30-second opening, three interaction questions, comment guidance, optional resource wording, and a restrained course CTA when relevant.
-- Make the script usable for a Tuesday, Thursday, or Saturday livestream without claiming a schedule the user did not provide.
+Read [references/xiaohongshu-output.md](references/xiaohongshu-output.md) completely. Preserve the existing Xiaohongshu contract:
 
-## Apply Safety Rules
+1. `今日研判`;
+2. `小红书图文`: 3:4, publish-ready Simplified Mandarin copy, and exactly five hashtags;
+3. `图文设计`: complete 6–8-page direction;
+4. `短视频`: 3-second hook and 30–60-second verbatim Mandarin script;
+5. `直播承接` when useful;
+6. `发布与获客动作`;
+7. `核验来源`.
 
-- Do not promise guaranteed passing, admission, score improvement, or limited places without evidence.
-- Do not fabricate policies, score lines, statistics, student cases, prices, results, testimonials, or urgency.
-- When the user asks for fabricated evidence or guaranteed outcomes, refuse that element briefly and provide a compliant alternative draft.
-- Treat every result as a draft. Do not publish, send messages, or contact anyone unless explicitly requested.
+## Build operations and acquisition
 
-## Final Check
+- For Instagram, read [references/instagram-growth.md](references/instagram-growth.md). Build a `Reels discovery → profile promise → carousel save/share → Stories/Highlights trust → approved DM/profile-link action → qualified conversation` loop.
+- For Xiaohongshu, read [references/operations-growth.md](references/operations-growth.md). Preserve its search-to-trust-to-live-to-in-platform-conversion loop.
+- Use account-relative baselines and one-variable tests. Do not present universal posting times, hashtag counts, engagement thresholds, or growth outcomes as platform guarantees.
 
-Run this check before returning or saving the result. Revise the draft until every applicable item passes.
+## Protect trust and minors
 
-1. Count each title and body separately: Xiaohongshu title is at most 20 Chinese characters; Instagram title is at most 10; Instagram body is at most 120.
-2. Confirm the Xiaohongshu section has exactly five hashtags.
-3. Confirm all four formats use the same topic, audience, language choice, and factual basis.
-4. Confirm each CTA uses only a channel or contact method supplied by the user; otherwise use a neutral engagement CTA.
-5. Search for unverified numbers, dates, score lines, policy claims, fabricated cases, and guaranteed-result language.
-6. In time-sensitive mode, confirm the cutoff date and official-source list are present, or mark every unresolved item as `[待核验：...]`.
-7. In evergreen mode, remove unrequested year references and year-based hashtags.
+- Do not promise passing, admission, score improvement, ranking, or guaranteed outcomes.
+- Do not invent dates, statistics, policies, cases, testimonials, prices, teachers, partnerships, offers, or urgency.
+- Do not expose a minor's name, school, score report, contact details, or identifiable history without explicit permission.
+- Do not ask minors to post private information publicly. In DMs, request only the minimum non-identifying context needed.
+- Do not copy a viral post. Reuse only the validated audience problem, then create an original structure, examples, wording, and visual treatment.
+- If AI materially contributes to media, tell the operator to use the platform's current AI-content disclosure controls when required.
+- For Xiaohongshu, keep commercial conversion inside current approved platform paths.
+- For Instagram, use DM, profile link, lead form, booking link, or WhatsApp only when the user has supplied and approved that route.
 
-## Return or Save
+## Remain host and OS portable
 
-Return the complete Markdown in the response by default. Save a file only when the user explicitly asks to save or export it.
+- Resolve all bundled references relative to this `SKILL.md`.
+- Do not hardcode home directories, drive letters, shell syntax, executable locations, or a specific Codex/Claude tool name.
+- Use capabilities available in the current host; state research limitations when a connector is unavailable.
+- Keep generated files UTF-8 and use the current host's path conventions.
 
-Use this structure:
+## Run the final quality gate
 
-```markdown
-# 主题
+Revise until platform routing, language, dimensions, creative format, CTA, and hashtags are native to the chosen platform. Ensure one audience, problem, promise, evidence basis, and next action; date and source current claims; label sampled demand as a signal; provide complete design and script copy; match visual and caption topics; use a real privacy-safe CTA; and include research, publication order, one test, and a follow-up loop for daily content.
 
-> 资料截至：YYYY-MM-DD（仅时效内容）
+## Return or save
 
-## 小红书
-...
-
----
-
-## Instagram
-...
-
----
-
-## Reels 口播
-...
-
----
-
-## 直播话术
-...
-
-## 核验来源（仅时效内容）
-- 来源标题：https://official.example/...
-```
-
-When the user requests saving:
-
-1. Use the requested destination, or default to `output/YYYY-MM-DD/` in the current workspace.
-2. Build a safe filename from the topic. Remove `/`, `\`, control characters, and every `..` sequence; collapse repeated whitespace; never allow the topic to escape the destination directory.
-3. Use UTF-8 Markdown. If the target exists, append `-2`, `-3`, and so on. Never overwrite an existing draft automatically.
-4. Report the selected topic and provide a clickable absolute link to the new file.
+Return Markdown in chat by default. Save only when explicitly requested. When saving, use the requested destination or `output/YYYY-MM-DD/`; sanitize filenames; use UTF-8; and never overwrite an existing draft.
