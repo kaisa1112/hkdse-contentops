@@ -1,7 +1,7 @@
 {
   "name": "hkdse-contentops",
   "interface": {
-    "displayName": "HKDSE ContentOps"
+    "displayName": "Hong Kong Diploma of Secondary Education Examination ContentOps"
   },
   "plugins": [
     {

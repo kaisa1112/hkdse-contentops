@@ -58,7 +58,8 @@ def main() -> None:
         "Plugin repository URL mismatch",
     )
     require(
-        manifest["interface"]["displayName"] == "香港中学文凭考试内容运营",
+        manifest["interface"]["displayName"]
+        == "Hong Kong Diploma of Secondary Education Examination ContentOps",
         "Plugin display name mismatch",
     )
     require(
@@ -96,9 +97,18 @@ def main() -> None:
 
     openai_yaml = (SKILL_DIR / "agents" / "openai.yaml").read_text(encoding="utf-8")
     require(
-        'display_name: "香港中学文凭考试内容运营"' in openai_yaml,
+        'display_name: "Hong Kong Diploma of Secondary Education Examination ContentOps"'
+        in openai_yaml,
         "Skill display name mismatch",
     )
+
+    full_name = "Hong Kong Diploma of Secondary Education Examination ContentOps"
+    short_name = "HKDSE ContentOps"
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    require(full_name in readme, "README full name mismatch")
+    require(short_name in readme, "README short name mismatch")
+    require(full_name in skill, "Skill full name mismatch")
+    require(short_name in skill, "Skill short name mismatch")
 
     required_skill_terms = [
         "Daily content",

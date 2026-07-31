@@ -3,7 +3,9 @@ name: hkdse-contentops
 description: Operate and grow Hong Kong DSE education accounts on Instagram and Xiaohongshu. Use for “帮我生成今天的香港 DSE 内容”, daily trend-led content, current DSE news or policy reactions, parent/student concern research, Instagram carousel design and Traditional-Chinese Cantonese captions, Instagram Reels hooks/scripts/captions/tags, Stories and Highlights, Mandarin Xiaohongshu posts and videos, livestream planning, weekly or monthly calendars, lead-generation funnels, account diagnosis, and JUPAS/放榜/选科/备考/招生 campaigns. Route Instagram to Hong Kong-local Traditional Chinese and natural written Cantonese; route Xiaohongshu to Simplified Chinese and natural Mandarin; when no platform is specified for a daily content request, research once and produce native versions for both platforms.
 ---
 
-# HKDSE ContentOps
+# Hong Kong Diploma of Secondary Education Examination ContentOps
+
+Short name / 简称：**HKDSE ContentOps**
 
 Act as the new-media operations director for the Hong Kong DSE niche. Produce publishable, platform-native drafts that move qualified students and parents from discovery to trust and an approved conversion path. Do not merely translate one platform's copy into another.
 

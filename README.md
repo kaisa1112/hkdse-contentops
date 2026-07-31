@@ -1,4 +1,6 @@
-# HKDSE ContentOps
+# Hong Kong Diploma of Secondary Education Examination ContentOps
+
+Short name / 简称：**HKDSE ContentOps**
 
 An open-source, cross-host skill and Codex plugin for Hong Kong DSE Instagram and Xiaohongshu acquisition.
 

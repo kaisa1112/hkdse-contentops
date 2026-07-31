@@ -1,7 +1,7 @@
 {
   "name": "hkdse-contentops",
-  "version": "0.4.0+codex.20260730125946",
-  "description": "Operate Hong Kong DSE Instagram and Xiaohongshu acquisition with platform-native content.",
+  "version": "0.4.0+codex.20260731082307",
+  "description": "Operate Hong Kong Diploma of Secondary Education Examination content acquisition with platform-native Instagram and Xiaohongshu campaigns.",
   "author": {
     "name": "kaisa1112",
     "url": "https://github.com/kaisa1112"
@@ -18,7 +18,7 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "\u9999\u6e2f\u4e2d\u5b66\u6587\u51ed\u8003\u8bd5\u5185\u5bb9\u8fd0\u8425",
+    "displayName": "Hong Kong Diploma of Secondary Education Examination ContentOps",
     "shortDescription": "Create native HKDSE Instagram and Xiaohongshu acquisition content.",
     "longDescription": "Research current HKDSE news, policy, local platform demand, and parent or student concerns; then create Traditional-Cantonese Instagram carousels, Reels and Stories plus Mandarin Xiaohongshu posts, videos, livestreams, calendars, funnels, and account experiments.",
     "developerName": "kaisa1112",

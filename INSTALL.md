@@ -1,4 +1,6 @@
-# Install HKDSE ContentOps
+# Install Hong Kong Diploma of Secondary Education Examination ContentOps
+
+Short name / 简称：**HKDSE ContentOps**
 
 The same UTF-8 skill files work in Codex and Claude on Windows, macOS, and Linux. No runtime dependency is required for content generation; the host supplies its own web and social research tools.
 
