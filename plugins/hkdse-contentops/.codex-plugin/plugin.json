@@ -1,7 +1,7 @@
 {
   "name": "hkdse-contentops",
-  "version": "0.4.0+codex.20260731082307",
-  "description": "Operate Hong Kong Diploma of Secondary Education Examination content acquisition with platform-native Instagram and Xiaohongshu campaigns.",
+  "version": "0.4.0+codex.20260731095443",
+  "description": "\u9762\u5411\u9999\u6e2f\u4e2d\u5b66\u6587\u51ed\u8003\u8bd5\uff08HKDSE\uff09\u8d5b\u9053\u7684 Instagram \u4e0e\u5c0f\u7ea2\u4e66\u5185\u5bb9\u8fd0\u8425\u53ca\u83b7\u5ba2 Codex \u63d2\u4ef6\u3002",
   "author": {
     "name": "kaisa1112",
     "url": "https://github.com/kaisa1112"
@@ -18,9 +18,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Hong Kong Diploma of Secondary Education Examination ContentOps",
-    "shortDescription": "Create native HKDSE Instagram and Xiaohongshu acquisition content.",
-    "longDescription": "Research current HKDSE news, policy, local platform demand, and parent or student concerns; then create Traditional-Cantonese Instagram carousels, Reels and Stories plus Mandarin Xiaohongshu posts, videos, livestreams, calendars, funnels, and account experiments.",
+    "displayName": "HKDSE ContentOps",
+    "shortDescription": "\u751f\u6210\u9999\u6e2f\u4e2d\u5b66\u6587\u51ed\u8003\u8bd5\uff08HKDSE\uff09\u7684 IG \u4e0e\u5c0f\u7ea2\u4e66\u83b7\u5ba2\u5185\u5bb9\u3002",
+    "longDescription": "\u8c03\u7814\u9999\u6e2f\u4e2d\u5b66\u6587\u51ed\u8003\u8bd5\uff08HKDSE\uff09\u7684\u6700\u65b0\u5b98\u65b9\u8d44\u8baf\u3001\u653f\u7b56\u3001\u672c\u5730\u5e73\u53f0\u9700\u6c42\u53ca\u5b66\u751f\u4e0e\u5bb6\u957f\u5173\u6ce8\u70b9\uff0c\u751f\u6210 Instagram \u7e41\u4f53\u7ca4\u8bed\u8f6e\u64ad\u3001Reels\u3001Stories\uff0c\u4ee5\u53ca\u5c0f\u7ea2\u4e66\u666e\u901a\u8bdd\u56fe\u6587\u3001\u89c6\u9891\u3001\u76f4\u64ad\u3001\u8fd0\u8425\u65e5\u5386\u3001\u83b7\u5ba2\u6f0f\u6597\u548c\u8d26\u53f7\u5b9e\u9a8c\u65b9\u6848\u3002",
     "developerName": "kaisa1112",
     "category": "Productivity",
     "capabilities": [

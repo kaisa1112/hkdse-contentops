@@ -1,4 +1,4 @@
 interface:
-  display_name: "Hong Kong Diploma of Secondary Education Examination ContentOps"
-  short_description: "生成香港DSE的IG与小红书获客内容和运营方案"
+  display_name: "HKDSE ContentOps"
+  short_description: "生成香港中学文凭考试（HKDSE）的IG与小红书获客内容"
   default_prompt: "使用 $hkdse-contentops 调研并生成今天的香港 DSE Instagram 与小红书完整内容。"

@@ -58,9 +58,20 @@ def main() -> None:
         "Plugin repository URL mismatch",
     )
     require(
-        manifest["interface"]["displayName"]
-        == "Hong Kong Diploma of Secondary Education Examination ContentOps",
+        manifest["interface"]["displayName"] == "HKDSE ContentOps",
         "Plugin display name mismatch",
+    )
+    require(
+        "香港中学文凭考试（HKDSE）" in manifest["description"],
+        "Plugin description must disambiguate HKDSE",
+    )
+    require(
+        "香港中学文凭考试（HKDSE）" in manifest["interface"]["shortDescription"],
+        "Plugin short description must disambiguate HKDSE",
+    )
+    require(
+        "香港中学文凭考试（HKDSE）" in manifest["interface"]["longDescription"],
+        "Plugin long description must disambiguate HKDSE",
     )
     require(
         manifest["version"].split("+", 1)[0] == "0.4.0",
@@ -97,18 +108,24 @@ def main() -> None:
 
     openai_yaml = (SKILL_DIR / "agents" / "openai.yaml").read_text(encoding="utf-8")
     require(
-        'display_name: "Hong Kong Diploma of Secondary Education Examination ContentOps"'
-        in openai_yaml,
+        'display_name: "HKDSE ContentOps"' in openai_yaml,
         "Skill display name mismatch",
+    )
+    require(
+        "香港中学文凭考试（HKDSE）" in openai_yaml,
+        "Skill description must disambiguate HKDSE",
     )
 
     full_name = "Hong Kong Diploma of Secondary Education Examination ContentOps"
     short_name = "HKDSE ContentOps"
+    chinese_name = "香港中学文凭考试"
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     require(full_name in readme, "README full name mismatch")
     require(short_name in readme, "README short name mismatch")
     require(full_name in skill, "Skill full name mismatch")
     require(short_name in skill, "Skill short name mismatch")
+    require(chinese_name in readme, "README Chinese name mismatch")
+    require(chinese_name in skill, "Skill Chinese name mismatch")
 
     required_skill_terms = [
         "Daily content",
@@ -123,7 +140,7 @@ def main() -> None:
         "Account diagnosis",
         "Instagram Daily Pack",
         "Xiaohongshu Daily Pack",
-        "Remain host and OS portable",
+        "Remain portable in Codex",
     ]
     for term in required_skill_terms:
         require(term in skill, f"Missing skill requirement: {term}")
@@ -143,7 +160,7 @@ def main() -> None:
         require("C:\\Users\\" not in content, f"Windows machine path found in {path.name}")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for term in ("Claude", "Codex", "Windows", "macOS", "Linux"):
+    for term in ("Codex", "Windows", "macOS", "Linux"):
         require(term in readme, f"README missing portability term: {term}")
 
     public_text = "\n".join(
@@ -168,7 +185,7 @@ def main() -> None:
     print("Repository structure: OK")
     print("Plugin and marketplace metadata: OK")
     print("Skill workflow and reference routing: OK")
-    print("Cross-host and OS portability: OK")
+    print("Codex and OS portability: OK")
     print("Golden cases: 8 positive + 4 negative")
 
 

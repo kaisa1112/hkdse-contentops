@@ -27,7 +27,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py plugins/
 
 On Windows PowerShell, use `py -3` and the equivalent paths under `$HOME\.codex`.
 
-Manually run the twelve prompts in `tests/golden_cases.json` in fresh Codex or Claude sessions and compare the result with every `expected_checks` item. Do not publish generated drafts during evaluation.
+Manually run the twelve prompts in `tests/golden_cases.json` in fresh Codex sessions and compare the result with every `expected_checks` item. Do not publish generated drafts during evaluation.
 
 ## Pull requests
 
@@ -38,6 +38,6 @@ Manually run the twelve prompts in `tests/golden_cases.json` in fresh Codex or C
 5. Keep time-sensitive claims tied to official sources and a cutoff date.
 6. Avoid unverifiable education claims, external diversion, fabricated evidence, and guaranteed-result language.
 7. Add or update a golden case when behavior changes.
-8. Keep skill resources host-neutral and free of machine-specific paths, drive letters, shell assumptions, or required proprietary connectors.
+8. Keep skill resources portable across Codex environments and free of machine-specific paths, drive letters, shell assumptions, or required proprietary connectors.
 
 Keep changes small and explain the user-facing improvement in the pull request description.

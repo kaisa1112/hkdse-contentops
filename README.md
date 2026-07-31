@@ -1,10 +1,14 @@
-# Hong Kong Diploma of Secondary Education Examination ContentOps
+# HKDSE ContentOps
 
-Short name / 简称：**HKDSE ContentOps**
+Full name：**Hong Kong Diploma of Secondary Education Examination ContentOps**
 
-An open-source, cross-host skill and Codex plugin for Hong Kong DSE Instagram and Xiaohongshu acquisition.
+中文定位：**香港中学文凭考试内容运营**
 
-一个面向香港 DSE 赛道新媒体运营人员的双平台 Skill。支持 Codex 与 Claude，以及 Windows、macOS 和 Linux。它先调研最新官方信息、香港本地语境、平台需求和家长/学生问题，再生成平台原生内容、获客闭环和运营复盘。
+本项目中的 HKDSE 专指**香港中学文凭考试**，不是香港交易所。
+
+An open-source Codex skill and plugin for Hong Kong DSE Instagram and Xiaohongshu acquisition.
+
+一个面向香港 DSE 赛道新媒体运营人员的 Codex 双平台 Skill。当前以 macOS Codex 为主要验证环境。它先调研最新官方信息、香港本地语境、平台需求和家长/学生问题，再生成平台原生内容、获客闭环和运营复盘。
 
 ## 功能
 
@@ -94,23 +98,23 @@ An open-source, cross-host skill and Codex plugin for Hong Kong DSE Instagram an
 
 **常青内容**包括学习方法、诊断框架、复习计划和家长沟通。平台调研可以帮助选择角度，但不会强行添加年份或虚构政策变化。
 
-## 跨平台安装
+## Codex 安装
 
-完整说明见 [INSTALL.md](INSTALL.md)。技能核心只有 UTF-8 Markdown/YAML，不依赖特定操作系统、Shell、绝对路径或单一研究工具。
+完整说明见 [INSTALL.md](INSTALL.md)。技能核心只有 UTF-8 Markdown/YAML，不依赖绝对路径或单一研究工具。当前发布以 macOS Codex 为主要验证环境；Windows 和 Linux 安装入口保留，具体兼容问题按实际环境处理。
 
 macOS / Linux：
 
 ```sh
-./scripts/install-skill.sh --target both
+./scripts/install-skill.sh
 ```
 
 Windows PowerShell：
 
 ```powershell
-.\scripts\install-skill.ps1 -Target both
+.\scripts\install-skill.ps1
 ```
 
-安装器可选择 `codex`、`claude` 或 `both`。已有版本不会被静默覆盖；显式使用 `--force`／`-Force` 时会先创建时间戳备份。
+安装器只安装到 Codex。已有版本不会被静默覆盖；显式使用 `--force`／`-Force` 时会先创建时间戳备份。
 
 ### Codex Plugin
 
@@ -128,7 +132,7 @@ Use $skill-installer to install:
 https://github.com/kaisa1112/hkdse-contentops/tree/main/plugins/hkdse-contentops/skills/hkdse-contentops
 ```
 
-安装或升级后开启新的 Codex 任务或 Claude 会话。
+安装或升级后开启新的 Codex 任务。
 
 ## 验证
 

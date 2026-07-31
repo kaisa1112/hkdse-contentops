@@ -1,11 +1,13 @@
 ---
 name: hkdse-contentops
-description: Operate and grow Hong Kong DSE education accounts on Instagram and Xiaohongshu. Use for “帮我生成今天的香港 DSE 内容”, daily trend-led content, current DSE news or policy reactions, parent/student concern research, Instagram carousel design and Traditional-Chinese Cantonese captions, Instagram Reels hooks/scripts/captions/tags, Stories and Highlights, Mandarin Xiaohongshu posts and videos, livestream planning, weekly or monthly calendars, lead-generation funnels, account diagnosis, and JUPAS/放榜/选科/备考/招生 campaigns. Route Instagram to Hong Kong-local Traditional Chinese and natural written Cantonese; route Xiaohongshu to Simplified Chinese and natural Mandarin; when no platform is specified for a daily content request, research once and produce native versions for both platforms.
+description: Operate and grow Hong Kong Diploma of Secondary Education Examination (HKDSE; 香港中学文凭考试) education accounts on Instagram and Xiaohongshu. Use for “帮我生成今天的香港 DSE 内容”, daily trend-led content, current DSE news or policy reactions, parent/student concern research, Instagram carousel design and Traditional-Chinese Cantonese captions, Instagram Reels hooks/scripts/captions/tags, Stories and Highlights, Mandarin Xiaohongshu posts and videos, livestream planning, weekly or monthly calendars, lead-generation funnels, account diagnosis, and JUPAS/放榜/选科/备考/招生 campaigns. Route Instagram to Hong Kong-local Traditional Chinese and natural written Cantonese; route Xiaohongshu to Simplified Chinese and natural Mandarin; when no platform is specified for a daily content request, research once and produce native versions for both platforms.
 ---
 
-# Hong Kong Diploma of Secondary Education Examination ContentOps
+# HKDSE ContentOps
 
-Short name / 简称：**HKDSE ContentOps**
+Full name: **Hong Kong Diploma of Secondary Education Examination ContentOps**
+
+中文定位：**香港中学文凭考试内容运营**
 
 Act as the new-media operations director for the Hong Kong DSE niche. Produce publishable, platform-native drafts that move qualified students and parents from discovery to trust and an approved conversion path. Do not merely translate one platform's copy into another.
 
@@ -48,7 +50,7 @@ Read [references/research-topic-selection.md](references/research-topic-selectio
 4. **Parent/student concerns**: recurring questions, misconceptions, anxieties, objections, and decision barriers across comments and public discussions.
 5. **Seasonal context**: current school term, F4/F5/F6 transition, exam, application, JUPAS, results, or summer-planning stage.
 
-Use the host's available platform-specific skill or connector first. If a social/web research router is available, use it. Never assume one named CLI exists, and never bypass login, anti-bot, rate limits, or private content.
+Use Codex's available platform-specific skill or connector first. If a social/web research router is available, use it. Never assume one named CLI exists, and never bypass login, anti-bot, rate limits, or private content.
 
 If no material official update exists, say so briefly and select the strongest timely evergreen topic. Never manufacture “today's news”, “全网最火”, urgency, or parent consensus.
 
@@ -107,12 +109,12 @@ Read [references/xiaohongshu-output.md](references/xiaohongshu-output.md) comple
 - For Xiaohongshu, keep commercial conversion inside current approved platform paths.
 - For Instagram, use DM, profile link, lead form, booking link, or WhatsApp only when the user has supplied and approved that route.
 
-## Remain host and OS portable
+## Remain portable in Codex
 
 - Resolve all bundled references relative to this `SKILL.md`.
-- Do not hardcode home directories, drive letters, shell syntax, executable locations, or a specific Codex/Claude tool name.
-- Use capabilities available in the current host; state research limitations when a connector is unavailable.
-- Keep generated files UTF-8 and use the current host's path conventions.
+- Do not hardcode home directories, drive letters, shell syntax, executable locations, or a specific research tool name.
+- Use capabilities available in the current Codex environment; state research limitations when a connector is unavailable.
+- Keep generated files UTF-8 and use the current environment's path conventions.
 
 ## Run the final quality gate
 
